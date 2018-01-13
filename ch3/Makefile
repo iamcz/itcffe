@@ -1,23 +1,19 @@
-CFLAGS = -O
 CC = g++
+CFLAGS = -O
+src = $(wildcard *.cpp)
+obj = $(src:.cpp=.o)
+eo = $(wildcard EuropeanOption*.cpp)
+eo_obj = $(eo:.cpp=.o)
+sbp = $(wildcard *SimpleBondPricing.cpp)
+sbp_obj = $(sbp:.cpp=.o)
 
-EuropeanOptionTest: EuropeanOptionTest.o EuropeanOption.o
-	$(CC) $(CFLAGS) -o EuropeanOptionTest EuropeanOptionTest.o EuropeanOption.o
+all: EuropeanOptionTest TestSimpleBondPricing
 
-EuropeanOptionTest.o: EuropeanOptionTest.cpp
-	$(CC) $(CFLAGS) -c EuropeanOptionTest.cpp
+EuropeanOptionTest: $(eo_obj)
+	$(CC) $(CFLAGS) -o $@ $^
 
-EuropeanOption.o: EuropeanOption.cpp
-	$(CC) $(CFLAGS) -c EuropeanOption.cpp
-
-TestSimpleBondPricing: SimpleBondPricing.o TestSimpleBondPricing.o
-	$(CC) $(CFLAGS) -o TestSimpleBondPricing TestSimpleBondPricing.o SimpleBondPricing.o
-
-TestSimpleBondPricing.o: TestSimpleBondPricing.cpp
-	$(CC) $(CFLAGS) -c TestSimpleBondPricing.cpp
-
-SimpleBondPricing.o: SimpleBondPricing.cpp
-	$(CC) $(CFLAGS) -c SimpleBondPricing.cpp
+TestSimpleBondPricing: $(sbp_obj)
+	$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-	rm -f EuropeanOptionTest *.o
+	rm EuropeanOptionTest $(obj)
