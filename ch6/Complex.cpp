@@ -25,7 +25,7 @@
 // electronic or mechanical, for any purpose, without the express written permission
 // of Datasim BV.
 
-#include "complex.hpp"
+#include "Complex.hpp"
 #include <math.h>
 
 Complex mpi(const Complex& z)
@@ -207,7 +207,7 @@ Complex Complex::operator / (const Complex& c2) const
 	Complex tmp1 = conjugate(c2);
 	Complex tmp2 = tmp1 * (*this);
 	res =tmp2/d;
-	
+
 	return res;
 }
 

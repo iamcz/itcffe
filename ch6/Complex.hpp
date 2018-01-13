@@ -13,8 +13,8 @@
 #ifndef COMPLEX_HXX
 #define COMPLEX_HXX
 
-#include <iostream.h>
-//using namespace std;
+#include <iostream>
+using namespace std;
 
 class Complex
 {
@@ -68,7 +68,7 @@ public:
        // Other functions
        friend Complex conjugate(const Complex& c);	   // X + iY --> X - iY
        friend Complex inverse(const Complex& c);	   // X + iY --> 1.0 /(X + iY)
-    
+
        // Complex trigonometric functions
        friend Complex exp(const Complex& c);           // Exponential function
        friend Complex cos(const Complex& c);           // Cosine function
@@ -77,7 +77,7 @@ public:
        friend Complex sinh(const Complex& c); 	   // Hyperbolic sine function
        friend Complex tanh(const Complex& c);          // Hyperbolic tangent
 	   friend Complex sech(const Complex& c);        // Hyperbolic secant
-       friend Complex csch(const Complex& c);      
+       friend Complex csch(const Complex& c);
        friend Complex coth(const Complex& c);        // Hyperbolic cotangent
 	   friend Complex tan(const Complex& c);	   // The tangent function
        friend Complex cgt(const Complex& c);	   // The cotangent function

@@ -3,7 +3,7 @@
 // Testing complex numbers
 //
 
-#include "complex.hpp"
+#include "Complex.hpp"
 
 int main()
 {
@@ -51,7 +51,7 @@ int main()
 	cout << c;
 
 	cout << "First: " << z1 << "Second: " << z2 << endl;
-	
+
 	Complex za = exp(Complex(0.0, 0.0));
 	cout << za;
 
