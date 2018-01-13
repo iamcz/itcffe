@@ -1,4 +1,4 @@
-src = $(wildcard *.cpp) $(wildcard */*.cpp) $(wildcard utilities/*/*.cpp)
+src = $(wildcard utilities/*/*.cpp) $(wildcard */*.cpp)
 obj = $(src:.cpp=.o)
 
 EuropeanOptionTest : $(obj)
